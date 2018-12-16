@@ -15,7 +15,7 @@ const game = {
         yourNumber = 0;
         $('.target-number').text(targetNumber);
         $('.your-number').text(yourNumber);
-        $(".crystal-container").empty();
+        $('.crystal-container').empty();
         let crystals = '';
         // since there are only 4 crystals, loop will start with 1 and end in 4
         for(var i = 1; i < 5; i++) {
@@ -24,7 +24,7 @@ const game = {
                                 <img class="crystal-img" src="assets/images/crystal-${i}.png" data-value="${crystalValue}">
                             </div>`;
         }
-        $(".crystal-container").append(crystals);
+        $('.crystal-container').append(crystals);
     },
     win: function() {
         wins++;
@@ -32,8 +32,8 @@ const game = {
                         <h2 class="h1 mb-0">You Win!</h2>
                         <p class="mb-0">Starting a new game...</p>
                     </div>`;
-        $(".crystal-container").html(result);
-        $(".win-count").text(wins);
+        $('.crystal-container').html(result);
+        $('.win-count').text(wins);
         setTimeout(function() {
             game.init();
         }, 1200);
@@ -44,8 +44,8 @@ const game = {
                         <h2 class="h1 mb-0">You Lose!</h2>
                         <p class="mb-0">Starting a new game...</p>
                     </div>`;
-        $(".crystal-container").html(result);
-        $(".loss-count").text(losses);
+        $('.crystal-container').html(result);
+        $('.loss-count').text(losses);
         setTimeout(function() {
             game.init();
         }, 1200);
@@ -53,8 +53,8 @@ const game = {
 }
 game.init();
 
-$(document).on("click", ".crystal-img", function() {
-    let crystalValue = ($(this).attr("data-value"));
+$(document).on('click', '.crystal-img', function() {
+    let crystalValue = ($(this).attr('data-value'));
         crystalValue = parseInt(crystalValue);
         yourNumber += crystalValue;
     //console.log(yourNumber)
