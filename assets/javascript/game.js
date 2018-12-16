@@ -54,16 +54,16 @@ const game = {
 game.init();
 
 $(document).on("click", ".crystal-img", function() {
-	let crystalValue = ($(this).attr("data-value"));
-    	crystalValue = parseInt(crystalValue);
-    	yourNumber += crystalValue;
+    let crystalValue = ($(this).attr("data-value"));
+        crystalValue = parseInt(crystalValue);
+        yourNumber += crystalValue;
     //console.log(yourNumber)
     $('.your-number').text(yourNumber);
 
-	if (targetNumber === yourNumber) {
-		game.win();
-	}
-	else if (targetNumber < yourNumber){
-		game.lose();
-	}
+    if (targetNumber === yourNumber) {
+        game.win();
+    }
+    else if (targetNumber < yourNumber){
+        game.lose();
+    }
 });
