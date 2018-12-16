@@ -36,7 +36,7 @@ const game = {
         $(".win-count").text(wins);
         setTimeout(function() {
             game.init();
-        }, 1000);
+        }, 1200);
     },
     lose: function() {
         losses++;
@@ -48,7 +48,7 @@ const game = {
         $(".loss-count").text(losses);
         setTimeout(function() {
             game.init();
-        }, 1000);
+        }, 1200);
     }
 }
 game.init();
