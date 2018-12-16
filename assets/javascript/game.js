@@ -15,16 +15,16 @@ const game = {
         yourNumber = 0;
         $('.target-number').text(targetNumber);
         $('.your-number').text(yourNumber);
-        $(".crystal-container").html('');
-
+        $(".crystal-container").empty();
+        let crystals = '';
         // since there are only 4 crystals, loop will start with 1
         for(var i = 1; i < 5; i++) {
             let crystalValue = this.getRandomNumber(1, 12);
-            let crystals = `<div class="col-6 col-sm-3 col-md-3 crystal-col">
+            crystals += `<div class="col-6 col-sm-3 col-md-3 crystal-col">
                                 <img class="crystal-img" src="assets/images/crystal-${i}.png" data-value="${crystalValue}">
                             </div>`;
-            $(".crystal-container").append(crystals);
         }
+        $(".crystal-container").append(crystals);
     },
     win: function() {
         wins++;
@@ -34,7 +34,6 @@ const game = {
                     </div>`;
         $(".crystal-container").html(result);
         $(".win-count").text(wins);
-        // addind setTimeout to allow for animation to finish
         setTimeout(function() {
             game.init();
         }, 1000);
